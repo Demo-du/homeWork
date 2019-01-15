@@ -1,6 +1,8 @@
 package com.netease;
 
+import com.netease.entity.Product;
 import com.netease.entity.User;
+import com.netease.mapper.ProductMapper;
 import com.netease.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,12 +18,16 @@ import java.util.List;
 public class ShopApplicationTests {
     @Autowired
 	UserMapper userMapper;
+    @Autowired
+	ProductMapper productMapper;
 	@Test
 	public void contextLoads() {
 		//List<User> list=userMapper.selectAll();
 		//System.out.println(list.get(0).getName());
-		User user=userMapper.selectUserByName("2");
-		System.out.println(user.name);
+		//User user=userMapper.selectUserByName("2");
+		//System.out.println(user.name);
+		List<Product> list=productMapper.selectAll();
+		System.out.println(list.get(0).getPicUrl());
 	}
 
 }
