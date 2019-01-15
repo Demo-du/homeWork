@@ -4,6 +4,6 @@
     <title>商品列表</title>
 </head>
 <body>
-<h2>Hello</h2>
+<h2>Hello ${productList[0].ID} ddd</h2>
 </body>
 </html>

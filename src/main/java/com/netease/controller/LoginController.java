@@ -10,8 +10,10 @@
  */
 package com.netease.controller;
 
+import com.netease.entity.Product;
 import com.netease.entity.User;
 import com.netease.mapper.UserMapper;
+import com.netease.service.ShowListSerrvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,20 +33,24 @@ import java.util.List;
 public class LoginController {
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    ShowListSerrvice showListSerrvice;
     @RequestMapping(value="/login")
     public String Login() {
         return "login"; //没有用ResponseBody，返回string，跳转的是jsp页面："login" + ".jsp"后缀
     }
     @RequestMapping(value="/showlist")
-    public String showlist(String username, String password, Model model) {
-        User user=userMapper.selectUserByName(username);
+    public String showlist(String name, String pswd, Model model) {
+        User user=userMapper.selectUserByName(name);
         if (user==null){
-            return "index";
+            return "login";
         }
-        if (password.equals(user.getPswd())){
-            model.addAttribute(user);
+        if (pswd.equals(user.getPswd())){
+            model.addAttribute("user",user);
+            List<Product> productList=showListSerrvice.showListProduct();
+            model.addAttribute("productList",productList);
             return "showlist";
         }
-        return "index";
+        return "login";
     }
 }
