@@ -18,8 +18,10 @@ public class ShopApplicationTests {
 	UserMapper userMapper;
 	@Test
 	public void contextLoads() {
-		List<User> list=userMapper.selectAll();
-		System.out.println(list.get(0).getName());
+		//List<User> list=userMapper.selectAll();
+		//System.out.println(list.get(0).getName());
+		User user=userMapper.selectUserByName("2");
+		System.out.println(user.name);
 	}
 
 }

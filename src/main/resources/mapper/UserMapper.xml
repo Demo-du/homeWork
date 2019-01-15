@@ -5,5 +5,7 @@
     <select id="selectAll" resultType="com.netease.entity.User">
         select *  from user;
     </select>
-
+    <select id="selectUserByName" parameterType="String" resultType="com.netease.entity.User">
+        select *  from user WHERE name=#{name};
+    </select>
 </mapper>
