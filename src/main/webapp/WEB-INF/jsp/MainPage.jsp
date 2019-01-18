@@ -11,18 +11,17 @@
             <li><a href="#">首页</a></li>
         </ol>
     </div>
-    <c:forEach items="productList" var="test" varStatus="status">
-        ${status.index}
+    <c:forEach items="${productList}" var="test" varStatus="status" step="1">
         <div class="col-md-2" style="height:250px">
-            <a href="index"> <img src="http://pic36.photophoto.cn/20150708/0037037172755280_b.jpg"
-                                  width="170" height="170" style="display: inline-block;">
-            </a>
-            <p>
-                <a href="index" style='color: green'>${productList[status.index].name}</a>
-            </p>
-            <p>
-                <font color="#FF0000">商城价：￥${productList[status.index].price}</font>
-            </p>
+             <a href="login"> <img src="${productList[status.index].picUrl}"
+                                   width="170" height="170" style="display: inline-block;">
+             </a>
+             <p>
+                 <a href="login" style='color: green'>${productList[status.index].name}</a>
+             </p>
+             <p>
+                 <font color="#FF0000">商城价：￥${productList[status.index].price}</font>
+             </p>
         </div>
     </c:forEach>
 </div>
