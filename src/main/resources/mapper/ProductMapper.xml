@@ -4,4 +4,7 @@
     <select id="selectAll" resultType="com.netease.entity.Product">
         select *  from product;
     </select>
+    <select id="selectProductById" parameterType="long" resultType="com.netease.entity.Product">
+        select *  from product WHERE ID=#{ID};
+    </select>
 </mapper>

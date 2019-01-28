@@ -27,4 +27,5 @@ import java.util.List;
 @Mapper
 public interface ProductMapper {
     List<Product> selectAll();
+    List<Product> selectProductById(Long ID);
 }

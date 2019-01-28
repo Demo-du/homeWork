@@ -26,7 +26,7 @@ public class ShopApplicationTests {
 		//System.out.println(list.get(0).getName());
 		//User user=userMapper.selectUserByName("2");
 		//System.out.println(user.name);
-		List<Product> list=productMapper.selectAll();
+		List<Product> list=productMapper.selectProductById(1L);
 		System.out.println(list.get(0).getPicUrl());
 	}
 
