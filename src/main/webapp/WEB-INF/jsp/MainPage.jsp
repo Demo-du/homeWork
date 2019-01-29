@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>商品列表</title>
+    <link rel="stylesheet" href="/css/style.css"/>
+
 </head>
 <body>
 <div class="row" style="width: 1210px; margin: 0 auto;">

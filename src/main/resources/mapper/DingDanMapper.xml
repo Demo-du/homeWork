@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.mapper.DingDanMapper">
+    <select id="selectAll" resultType="com.netease.entity.DingDan">
+        select *  from dingdan;
+    </select>
+    <select id="selectDingDanById" parameterType="long" resultType="com.netease.entity.DingDan">
+        select *  from dingdan WHERE ID=#{ID};
+    </select>
+</mapper>

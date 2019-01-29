@@ -1,7 +1,9 @@
 package com.netease;
 
+import com.netease.entity.DingDan;
 import com.netease.entity.Product;
 import com.netease.entity.User;
+import com.netease.mapper.DingDanMapper;
 import com.netease.mapper.ProductMapper;
 import com.netease.mapper.UserMapper;
 import org.junit.Test;
@@ -20,14 +22,12 @@ public class ShopApplicationTests {
 	UserMapper userMapper;
     @Autowired
 	ProductMapper productMapper;
+    @Autowired
+	DingDanMapper dingDanMapper;
 	@Test
 	public void contextLoads() {
-		//List<User> list=userMapper.selectAll();
-		//System.out.println(list.get(0).getName());
-		//User user=userMapper.selectUserByName("2");
-		//System.out.println(user.name);
-		List<Product> list=productMapper.selectProductById(1L);
-		System.out.println(list.get(0).getPicUrl());
+		List<DingDan> dingDanList=dingDanMapper.selectDingDanById(1l);
+		System.out.println(dingDanList.get(0).getPrice());
 	}
 
 }
