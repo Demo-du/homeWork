@@ -26,7 +26,7 @@ public class ShopApplicationTests {
 	DingDanMapper dingDanMapper;
 	@Test
 	public void contextLoads() {
-		List<DingDan> dingDanList=dingDanMapper.selectDingDanById(1l);
+		List<DingDan> dingDanList=dingDanMapper.selectDingDanByUserIdAndProductId(1l,1l);
 		System.out.println(dingDanList.get(0).getPrice());
 	}
 

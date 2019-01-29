@@ -14,6 +14,7 @@ import com.netease.entity.DingDan;
 import com.netease.entity.Product;
 import com.netease.entity.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -29,4 +30,6 @@ import java.util.List;
 public interface DingDanMapper {
     List<DingDan> selectAll();
     List<DingDan> selectDingDanById(Long ID);
+    List<DingDan> selectDingDanByUserId(Long userId);
+    List<DingDan> selectDingDanByUserIdAndProductId(@Param("userId") Long userId,@Param("productId") Long productId);
 }

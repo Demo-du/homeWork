@@ -7,4 +7,10 @@
     <select id="selectDingDanById" parameterType="long" resultType="com.netease.entity.DingDan">
         select *  from dingdan WHERE ID=#{ID};
     </select>
+    <select id="selectDingDanByUserId" parameterType="long" resultType="com.netease.entity.DingDan">
+        select *  from dingdan WHERE userId=#{userId};
+    </select>
+    <select id="selectDingDanByUserIdAndProductId" parameterType="long" resultType="com.netease.entity.DingDan">
+        select *  from dingdan WHERE userId=#{userId} and productId=#{productId};
+    </select>
 </mapper>
