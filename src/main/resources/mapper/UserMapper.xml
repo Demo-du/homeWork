@@ -8,4 +8,7 @@
     <select id="selectUserByName" parameterType="String" resultType="com.netease.entity.User">
         select *  from user WHERE name=#{name};
     </select>
+    <select id="selectUserById" parameterType="Long" resultType="com.netease.entity.User">
+        select *  from user WHERE ID=#{ID};
+    </select>
 </mapper>

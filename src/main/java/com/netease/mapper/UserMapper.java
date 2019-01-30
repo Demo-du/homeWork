@@ -28,4 +28,5 @@ import java.util.List;
 public interface UserMapper {
     List<User> selectAll();
     User selectUserByName(String name);
+    User selectUserById(Long ID);
 }

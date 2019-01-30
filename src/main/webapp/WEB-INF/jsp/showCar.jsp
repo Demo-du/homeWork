@@ -2,27 +2,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>商品列表</title>
+    <title>购物车</title>
 </head>
 <body>
 <div class="row" style="width: 1210px; margin: 0 auto;">
     <div class="col-md-12">
         <ol class="breadcrumb">
-            <li><a href="#">用户：${user.name}</a></li>
+            <li><a href="#">用户：${user.name}的购物车</a></li>
         </ol>
     </div>
-    <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="showCar?userId=${user.ID}">购物车</a></li>
-        </ol>
-    </div>
-    <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="jiesuan?userId=${user.ID}">结算</a></li>
-        </ol>
-    </div>
+
     <c:forEach items="${productList}" var="test" varStatus="status" step="1">
-        <div class="col-md-2" style="height:250px">
+        <div class="col-md-2" style="height:300px">
             <a href="showProduct?productId=${productList[status.index].ID}&userId=${user.ID}"> <img src="${productList[status.index].picUrl}"
                                   width="170" height="170" style="display: inline-block;">
             </a>
@@ -31,6 +22,9 @@
             </p>
             <p>
                 <font color="#FF0000">商城价：￥${productList[status.index].price}</font>
+            </p>
+            <p>
+                <font color="#FF0000">数量${productList[status.index].num}</font>
             </p>
         </div>
     </c:forEach>

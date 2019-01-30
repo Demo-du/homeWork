@@ -27,6 +27,15 @@ public class Product {
     public String picUrl;
     public BigDecimal price;
     public String info;
+    public long num;
+
+    public long getNum() {
+        return num;
+    }
+
+    public void setNum(long num) {
+        this.num = num;
+    }
 
     public Long getID() {
         return ID;
