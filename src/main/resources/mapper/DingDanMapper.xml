@@ -13,4 +13,19 @@
     <select id="selectDingDanByUserIdAndProductId" parameterType="long" resultType="com.netease.entity.DingDan">
         select *  from dingdan WHERE userId=#{userId} and productId=#{productId};
     </select>
+    <insert id="insertDingDan" parameterType="com.netease.entity.DingDan" statementType="PREPARED"
+            keyProperty="ID" useGeneratedKeys="true">
+        insert into dingdan
+        (userid,productid,price,sum) values
+        (#{userId},#{productId},#{price},#{sum})
+    </insert>
+
+    <update id="updateDingDan" parameterType="com.netease.entity.DingDan">
+        update dingdan set userid = #{userId},productid=#{productId},
+        price=#{price},sum=#{sum}
+        where id = #{ID};
+    </update>
+    <delete id="deleteDingDan" parameterType="Long">
+        delete from dingdan where id = #{ID};
+    </delete>
 </mapper>

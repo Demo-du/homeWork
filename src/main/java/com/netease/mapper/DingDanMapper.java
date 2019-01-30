@@ -32,4 +32,7 @@ public interface DingDanMapper {
     List<DingDan> selectDingDanById(Long ID);
     List<DingDan> selectDingDanByUserId(Long userId);
     List<DingDan> selectDingDanByUserIdAndProductId(@Param("userId") Long userId,@Param("productId") Long productId);
+    void insertDingDan(DingDan dingDan);
+    void updateDingDan(DingDan dingDan);
+    void deleteDingDan(Long ID);
 }

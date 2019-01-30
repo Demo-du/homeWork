@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 //@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
@@ -26,8 +27,15 @@ public class ShopApplicationTests {
 	DingDanMapper dingDanMapper;
 	@Test
 	public void contextLoads() {
-		List<DingDan> dingDanList=dingDanMapper.selectDingDanByUserIdAndProductId(1l,1l);
-		System.out.println(dingDanList.get(0).getPrice());
+		//List<DingDan> dingDanList=dingDanMapper.selectDingDanByUserIdAndProductId(1l,1l);
+		//System.out.println(dingDanList.get(0).getPrice());
+		DingDan dingDan=new DingDan();
+		dingDan.setPrice(new BigDecimal(0));
+		dingDan.setProductId(1L);
+		dingDan.setSum(888l);
+		dingDan.setUserId(1l);
+		dingDan.setID(3l);
+		dingDanMapper.deleteDingDan(3l);
 	}
 
 }
