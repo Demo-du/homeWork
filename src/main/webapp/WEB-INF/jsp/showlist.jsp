@@ -7,19 +7,13 @@
 <body>
 <div class="row" style="width: 1210px; margin: 0 auto;">
     <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="#">用户：${user.name}</a></li>
-        </ol>
+        <a href="#">用户：${user.name}</a>
     </div>
     <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="showCar?userId=${user.ID}">购物车</a></li>
-        </ol>
+         <a href="showCar?userId=${user.ID}">购物车</a>
     </div>
     <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="jiesuan?userId=${user.ID}">结算</a></li>
-        </ol>
+        <a href="jiesuan?userId=${user.ID}">结算</a>
     </div>
     <c:forEach items="${productList}" var="test" varStatus="status" step="1">
         <div class="col-md-2" style="height:250px">

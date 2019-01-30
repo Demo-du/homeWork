@@ -13,6 +13,7 @@ package com.netease.controller;
 import com.netease.entity.DingDan;
 import com.netease.entity.Product;
 import com.netease.mapper.ProductMapper;
+import com.netease.mapper.UserMapper;
 import com.netease.service.ShowCarSerrvice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,10 +34,13 @@ import java.util.List;
 public class ShowCarController {
     @Autowired
     ShowCarSerrvice showCarSerrvice;
+    @Autowired
+    UserMapper userMapper;
     @RequestMapping(value="/showCar")
     public String showCar(long userId,Model model){
         List<Product> productList=showCarSerrvice.showListCar(userId);
         model.addAttribute("productList",productList);
+        model.addAttribute("user",userMapper.selectUserById(userId));
         return "showCar";
     }
 }

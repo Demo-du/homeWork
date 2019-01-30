@@ -7,9 +7,7 @@
 <body>
 <div class="row" style="width: 1210px; margin: 0 auto;">
     <div class="col-md-12">
-        <ol class="breadcrumb">
-            <li><a href="#">用户：${user.name}的购物车</a></li>
-        </ol>
+        <a href="#">用户：${user.name}的购物车</a>
     </div>
 
     <c:forEach items="${productList}" var="test" varStatus="status" step="1">

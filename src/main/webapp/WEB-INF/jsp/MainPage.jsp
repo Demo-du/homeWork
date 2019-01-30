@@ -9,9 +9,7 @@
 <body>
 <div class="row" style="width: 1210px; margin: 0 auto;">
     <div class="col-md-12">
-        <ol class="breadcrumb">
             <li><a href="#">首页</a></li>
-        </ol>
     </div>
     <c:forEach items="${productList}" var="test" varStatus="status" step="1">
         <div class="col-md-2" style="height:250px">
