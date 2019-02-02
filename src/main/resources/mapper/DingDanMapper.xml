@@ -28,4 +28,7 @@
     <delete id="deleteDingDan" parameterType="Long">
         delete from dingdan where id = #{ID};
     </delete>
+    <delete id="deleteDingDanByUserId" parameterType="Long">
+        delete from dingdan where userId = #{userId};
+    </delete>
 </mapper>

@@ -10,13 +10,13 @@
     <insert id="insertProduct" parameterType="com.netease.entity.Product" statementType="PREPARED"
             keyProperty="ID" useGeneratedKeys="true">
         insert into product
-        (name,topic,picurl,price,info,num) values
-        (#{name},#{topic},#{picUrl},#{price},#{info},#{num})
+        (name,topic,picurl,price,info,num,sellNum) values
+        (#{name},#{topic},#{picUrl},#{price},#{info},#{num},#{sellNum})
     </insert>
 
     <update id="updateProduct" parameterType="com.netease.entity.Product">
         update product set name = #{name},topic=#{topic},picurl=#{picUrl},
-        price=#{price},info=#{info},num=#{num}
+        price=#{price},info=#{info},num=#{num},sellNum=#{sellNum}
         where id = #{ID};
     </update>
     <delete id="deleteProduct" parameterType="Long">

@@ -10,7 +10,9 @@
  */
 package com.netease.controller;
 
+import com.netease.entity.DingDan;
 import com.netease.entity.Product;
+import com.netease.mapper.DingDanMapper;
 import com.netease.mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,10 +33,18 @@ import java.util.List;
 public class ShowProductController {
     @Autowired
     ProductMapper productMapper;
+    @Autowired
+    DingDanMapper dingDanMapper;
     @RequestMapping(value="/showProduct")
     public String showProduct(long productId,long userId,Model model){
         List<Product> productList=productMapper.selectProductById(productId);
         model.addAttribute("product",productList.get(0));
+        model.addAttribute("productId",productId);
+        model.addAttribute("userId",userId);
+        List<DingDan> dingDanList=dingDanMapper.selectDingDanByUserIdAndProductId(userId,productId);
+        if (dingDanList!=null&&dingDanList.size()>0){
+            return "showProduct2";
+        }
         return "showProduct";
     }
 }

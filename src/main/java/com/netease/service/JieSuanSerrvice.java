@@ -54,7 +54,17 @@ public class JieSuanSerrvice {
             BigDecimal numTmp=new BigDecimal(productTmp.getNum());
             BigDecimal priceTmp=productTmp.getPrice().multiply(numTmp);
             priceSum=priceSum.add(priceTmp);
+            long productId=productTmp.getID();
+            //加销量
+           // long sellNumTmp=productMapper.selectProductById(productId).get(0).getSellNum();
+            Product productDb=productMapper.selectProductById(productId).get(0);
+            long sellNumTmp=productDb.getSellNum();
+            productDb.setSellNum(productTmp.getNum()+sellNumTmp);
+            //productDb.setNum(0L);
+            productMapper.updateProduct(productDb);
         }
+        //清订单
+        dingDanMapper.deleteDingDanByUserId(userId);
         return priceSum;
     }
 }

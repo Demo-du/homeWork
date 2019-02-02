@@ -28,6 +28,15 @@ public class Product {
     public BigDecimal price;
     public String info;
     public long num;
+    public long sellNum;
+
+    public long getSellNum() {
+        return sellNum;
+    }
+
+    public void setSellNum(long sellNum) {
+        this.sellNum = sellNum;
+    }
 
     public long getNum() {
         return num;

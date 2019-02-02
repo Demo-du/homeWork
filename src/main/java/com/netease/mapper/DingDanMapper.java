@@ -35,4 +35,5 @@ public interface DingDanMapper {
     void insertDingDan(DingDan dingDan);
     void updateDingDan(DingDan dingDan);
     void deleteDingDan(Long ID);
+    void deleteDingDanByUserId(Long UserId);
 }

@@ -27,5 +27,13 @@
         </div>
     </c:forEach>
 </div>
+<input type="button" value="结算" id="btn">
+<script>
+
+    btn.onclick = function(){
+        // alert(test.value)
+        window.location.href="jiesuan?userId=${user.ID}";
+    }
+</script>
 </body>
 </html>
