@@ -49,6 +49,9 @@ public class LoginController {
             model.addAttribute("user",user);
             List<Product> productList=showListSerrvice.showListProduct();
             model.addAttribute("productList",productList);
+            if (user.getName().equals("seller")){
+                return "showselllist";
+            }
             return "showlist";
         }
         return "login";
